@@ -43,11 +43,11 @@
                     App that doing things
                 </h1>
                 <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">
-                    Laravel / Tailwind / Nova / Jetstream / Livewire
+                   TALL STaCk
                 </p>
 
                 <p class="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">
-                    @auth Vai al tuo profilo @else Register/Login: @endauth
+                    @auth Profilo @else Register/Login: @endauth
                 </p>
                 <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
                     @if (Route::has('login'))

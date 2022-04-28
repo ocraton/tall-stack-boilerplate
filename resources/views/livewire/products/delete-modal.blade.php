@@ -9,7 +9,7 @@
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
 
         <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-           <h3>Cancellare il prodotto: {{ $name }} ?</h3>
+            <h3 class="p-4 font-bold">Cancellare il prodotto: {{ $name }} ?</h3>
 
             <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">

@@ -73,6 +73,7 @@ class Products extends Component
 
     private function resetInputFields()
     {
+        $this->search = '';
         $this->name = '';
         $this->detail = '';
         $this->product_id = '';

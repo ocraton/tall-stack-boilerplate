@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Products\Products;
-
+use App\Http\Livewire\Steccate\Steccate;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +16,12 @@ use App\Http\Livewire\Products\Products;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.welcome');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('products', Products::class)->name('products');
+    Route::get('steccate', Steccate::class)->name('steccate');
 });
 
 Route::middleware([
