@@ -20,6 +20,9 @@ class Steccate extends Component
     public $productSel;
     public $data;
 
+
+    protected $listeners = ['setDatePicker' => 'setDate'];
+
     protected $rules = [
         'altezza' => 'required|numeric',
         'litri' => 'required',
@@ -39,13 +42,14 @@ class Steccate extends Component
         }
         return view('livewire.steccate.steccate', [
             'steccate' => Steccata::where('data', 'like', '%' . $this->search . '%')->with('product')
-                ->orderBy('id', 'desc')->paginate(10),
+                ->orderBy('data', 'desc')->paginate(10),
         ]);
     }
 
     public function create()
     {
         $this->resetInputFields();
+        $this->data = Carbon::now()->format('Y-m-d');
         $this->isOpen = true;
     }
 
@@ -80,7 +84,7 @@ class Steccate extends Component
         Steccata::updateOrCreate(['id' => $this->steccata_id], [
             'altezza' => $this->altezza,
             'litri' => $this->litri,
-            'data' => Carbon::now(),
+            'data' => Carbon::createFromFormat('Y-m-d', $this->data),
             'product_id' => intval(json_decode($this->productSel)->id)
         ]);
 
@@ -98,6 +102,9 @@ class Steccate extends Component
         $this->productSel = $product;
     }
 
+    public function setDate($date){
+        $this->data = $date;
+    }
 
     private function resetInputFields()
     {
